@@ -12,20 +12,6 @@ landing_success = spacex_df[spacex_df['class']==1].groupby('Launch Site')['class
 #for the slider values
 min_value = spacex_df['Payload Mass (kg)'].min()
 max_value = spacex_df['Payload Mass (kg)'].max()
-#for the booster versions
-d = spacex_df['Booster Version'].unique()
-s = []
-for i in range(len(d)):
-    d[i] = d[i][3:7]
-booster_version = []
-for i in range(len(d)):
-    if d[i] == 'v1.0':
-        s.append(d[i])
-    elif d[i] == 'v1.1':
-        s.append(d[i])
-    else:
-        s.append(d[i][0:3])
-
 
 app = Dash(__name__)
 
